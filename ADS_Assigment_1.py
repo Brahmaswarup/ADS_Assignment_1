@@ -2,18 +2,23 @@
 """
 Created on Thu Nov  9 21:01:45 2023
 
-@author: 
+@author: Swaroop
+"""
+
+"""
+Importing pandas and matplotlib.pyplot modules help in 
+read the excel file and plot the graphs using the required 
+data
 """
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
 #Read the files into dataframes
-
-
-
 df_gdp = pd.read_excel("Popular_Indicators.xlsx")
 print (df_gdp)
 
+#Defining the Function for plotting Line plot
 def LinePlot(Country1,Country2,Country3,Country4) :
 
     """"Plotting four countries with labels"""
@@ -34,8 +39,10 @@ def LinePlot(Country1,Country2,Country3,Country4) :
     plt.savefig("LinePlot.png")#Saving the line plot
     plt.show()
     return  
+    #returing the funtion to call linePlot
 
 LinePlot("Afghanistan","Australia","India","Sri Lanka")    
+#calling the function
 
 def BarPlot(Width,Height):
     
@@ -48,10 +55,13 @@ def BarPlot(Width,Height):
     plt.xlabel("Year")
     plt.ylabel("production (thousand tonnes)")
     plt.legend(title="COUNTRIRS",edgecolor = "Black",loc = "upper right")
+    plt.savefig("BarPlot.png")#Saving the line plot
     plt.show()
     return
+    #returing the funtion to call BarPlot
 
 BarPlot(10,8)
+#calling the function
 
 def PieGraph(GDP):
 
@@ -66,12 +76,12 @@ def PieGraph(GDP):
     
     
     plt.title("Percenteage of Export of Goods and Services ")
-    plt.savefig("Barplot.png")
+    plt.savefig("Pieplot.png")
     plt.figure()
     plt.show()
-    
     return
+    #returing the funtion to call PiePlot
 
-
+#calling the function
 PieGraph("2005")
 PieGraph("2016")
